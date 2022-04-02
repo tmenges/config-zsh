@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+export PATH="/opt/X11/bin:$PATH"
+export PATH="/Library/TeX/textbin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/usr/local/go/bin:$PATH"
+export PATH="$HOME/.opam/default/bin:$PATH"
+export PATH="$HOME/opt/anaconda3/bin:$HOME/tony/opt/condabin:$PATH"
+export PATH="$HOME/tony/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+

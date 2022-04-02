@@ -1,0 +1,4 @@
+.p10k.zsh
+.zcomp*
+.zsh_history
+plugins
