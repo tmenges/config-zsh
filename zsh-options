@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+ulimit -c unlimited
+
 setopt append_history
 setopt no_inc_append_history
 setopt no_share_history

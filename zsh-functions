@@ -40,6 +40,10 @@ _fzf_comprun() {
     esac
 }
 
+function hc() {
+    history | grep "^[[:space:]]*[0-9]*[[:space:]]*$@"
+}
+
 function pathadd() {
     if ! echo "$PATH" | /usr/bin/grep -Eq "(^|:)$1($|:)" ; then
         if [ "$2" = "after" ] ; then
@@ -48,6 +52,12 @@ function pathadd() {
             export PATH="$1:$PATH"
         fi
     fi
+}
+
+function pathremove() {
+  PATH=:$PATH:
+  PATH=$(echo $PATH | sed -e "s?:$1:?:?")
+  PATH=$(echo $PATH | sed -e 's?^:??;s?:$??')
 }
 
 # Tmux
