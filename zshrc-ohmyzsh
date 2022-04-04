@@ -19,7 +19,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-syntax-highlighting)
+plugins=(git sudo zsh-syntax-highlighting)
 
 # User configuration
 
@@ -32,15 +32,12 @@ autoload -U compinit && compinit
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-source $ZDOTDIR/zsh-functions
 source $ZDOTDIR/zsh-options
 source $ZDOTDIR/zsh-aliases
 
 # Turn on vi mode
 bindkey -v
 bindkey '^u' backward-kill-line
-
-source $HOME/.ghcup/env
 
 ulimit -c unlimited
 
@@ -60,14 +57,14 @@ test -r /Users/tony/.opam/opam-init/init.zsh && . /Users/tony/.opam/opam-init/in
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/tony/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$ANACONDAHOME/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/tony/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/tony/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$ANACONDAHOME/etc/profile.d/conda.sh" ]; then
+        . "$ANACONDAHOME/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/tony/opt/anaconda3/bin:$PATH"
+        export PATH="$ANACONDAHOME/bin:$PATH"
     fi
 fi
 unset __conda_setup
